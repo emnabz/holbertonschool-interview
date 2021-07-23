@@ -1,20 +1,15 @@
 #!/usr/bin/python3
+"""This module contains one function: canUnlockAll()"""
+
 
 def canUnlockAll(boxes):
-    """
-    a method that determines if all the boxes can be opened.
-
-    """
-    key = [0]
-    result = [j for j in range(len(boxes))]
-    for i in key:
-        if i in range(len(boxes)):
-            for x in boxes[i]:
-                if x not in key:
-                    key.append(x)
-    key.sort()
-    key = key[:len(boxes)]
-    if result == key:
-        return True
-    else:
-        return False
+    """Determines if all the boxes can be opened"""
+    keysList = [0]
+    for key in keysList:
+        for k in boxes[key]:
+            if k not in keysList and k < len(boxes):
+                keysList.append(k)
+    for i in range(len(boxes)):
+        if i not in keysList:
+            return False
+    return True
