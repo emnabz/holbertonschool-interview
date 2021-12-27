@@ -6,7 +6,6 @@ javascript, but java should not)."""
 import requests
 from uuid import uuid4
 
-
 def count_words(subreddit, word_list):
     """ [Summary] """
     headers = requests.utils.default_headers()
